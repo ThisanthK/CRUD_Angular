@@ -1,0 +1,54 @@
+Service for HTTP Requests
+
+Create a service (auth.service.ts and item.service.ts) for handling HTTP requests to the API.
+
+// auth.service.ts
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+@Injectable({ providedIn: 'root' })
+export class AuthService {
+    private baseUrl = 'https://localhost:5001/api/authentication';
+
+    constructor(private http: HttpClient) { }
+
+    register(user: any) {
+        return this.http.post(`${this.baseUrl}/register`, user);
+    }
+
+    login(user: any) {
+        return this.http.post(`${this.baseUrl}/login`, user);
+    }
+}
+
+CRUD Component for Items
+
+Use ItemService to fetch, add, edit, and delete items from the backend.
+Bind data to the template in item-list.component.html.
+
+// item.service.ts
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+@Injectable({ providedIn: 'root' })
+export class ItemService {
+    private baseUrl = 'https://localhost:5001/api/item';
+
+    constructor(private http: HttpClient) { }
+
+    getItems() {
+        return this.http.get(`${this.baseUrl}`);
+    }
+
+    createItem(item: any) {
+        return this.http.post(`${this.baseUrl}`, item);
+    }
+
+    updateItem(id: number, item: any) {
+        return this.http.put(`${this.baseUrl}/${id}`, item);
+    }
+
+    deleteItem(id: number) {
+        return this.http.delete(`${this.baseUrl}/${id}`);
+    }
+}
