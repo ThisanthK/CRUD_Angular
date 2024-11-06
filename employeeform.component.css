@@ -1,0 +1,54 @@
+*{
+    margin:0px;
+    padding:0px;
+    
+}
+
+.employee-wrapper{
+    width:500px;
+    height: 400px;
+    background-color: rgb(232, 239, 239);
+    margin:10px;
+    border-radius: 10px;
+   
+
+}
+
+.employee-form{
+    padding:10px;
+} 
+
+h3{
+    width: 150px;
+    height: 30px;
+    margin: 15px 0px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.input , .address{
+    padding-left:10px;
+    font-size:15px;
+    outline: none;
+    border-radius: 5px;
+    border:1px solid;
+}
+
+.input{
+    width: 230px;
+    height: 40px;
+    margin:0px 5px 5px 0px;
+}
+
+.gender{
+    margin:10px 0px;
+}
+
+.gender-field{
+    margin-left: 8px;
+}
+
+.address{
+    margin-top:10px;
+}
